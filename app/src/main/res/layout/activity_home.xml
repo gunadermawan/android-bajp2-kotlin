@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeActivity"
-    android:background="@color/blueDark">
+    android:background="@color/blueDark"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar_layout"
@@ -34,23 +35,36 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@android:color/white"
+        android:fadeScrollbars="true"
+        android:scrollbarStyle="insideInset"
         app:indicatorGravity="center_vertical"
         app:indicatorOrientation="vertical"
-        android:fadeScrollbars="true"
         app:indicatorVisibility="visible"
-        app:strokeColor="@color/redSolid"
-        android:scrollbarStyle="insideInset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBar_layout"
         app:layout_constraintVertical_bias="0.0"
-        app:slideInterval="4000" />
+        app:slideInterval="4000"
+        app:strokeColor="@color/redSolid" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/imagepreview"
+        android:src="@drawable/bg_item"
+        app:layout_constraintBottom_toBottomOf="@+id/carausel_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/carausel_view"
+        app:layout_constraintVertical_bias="0.353" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/blueDark"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,10 +81,11 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabs" />
+        app:layout_constraintTop_toBottomOf="@+id/tabs"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
