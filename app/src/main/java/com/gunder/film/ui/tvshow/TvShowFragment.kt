@@ -29,7 +29,7 @@ class TvShowFragment : Fragment() {
         val progressBar: ProgressBar = view.findViewById(R.id.progress_bar)
         val tvShowAdapter = TvShowAdapter()
 
-        rvTvShow.layoutManager = GridLayoutManager(context, 3)
+        rvTvShow.layoutManager = GridLayoutManager(context, 2)
         rvTvShow.setHasFixedSize(true)
         rvTvShow.adapter = tvShowAdapter
 

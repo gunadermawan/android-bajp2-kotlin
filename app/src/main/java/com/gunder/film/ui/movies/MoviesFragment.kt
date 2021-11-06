@@ -31,7 +31,7 @@ class MoviesFragment : Fragment() {
         val progressBar: ProgressBar = view.findViewById(R.id.progress_bar)
         val moviesAdapter = MoviesAdapter()
 
-        rvMovies.layoutManager = GridLayoutManager(context, 3)
+        rvMovies.layoutManager = GridLayoutManager(context, 2)
         rvMovies.setHasFixedSize(true)
         rvMovies.adapter = moviesAdapter
 

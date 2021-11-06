@@ -34,6 +34,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.ContentViewHolder>() {
     inner class ContentViewHolder(private val binding: FilmItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movies: ListEntity) {
+            binding.tvTitle.text = movies.title
             Glide.with(itemView.context)
                 .load(BuildConfig.IMAGES + "/${movies.images}")
                 .into(binding.imageItem)
