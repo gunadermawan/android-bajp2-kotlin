@@ -14,16 +14,17 @@ interface ApiService {
         @Query("api_key") apiKey: String = BuildConfig.TOKEN
     ): Call<ResponseItem>
 
-    @GET("trending/tv/week")
-    fun getTv(
-        @Query("api_key") apiKey: String = BuildConfig.TOKEN
-    ): Call<ResponseItem>
-
     @GET("movie/{movie_id}")
     fun detailMovies(
         @Path("movie_id") movieId: Int,
         @Query("api_key") apiKey: String = BuildConfig.TOKEN
     ): Call<DetailResponse>
+
+    @GET("trending/tv/week")
+    fun getTv(
+        @Query("api_key") apiKey: String = BuildConfig.TOKEN
+    ): Call<ResponseItem>
+
 
     @GET("tv/{tv_id}")
     fun detailTv(
