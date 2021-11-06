@@ -10,5 +10,6 @@ data class ListEntity(
     var name: String? = null,
     var images: String? = null,
     var poster: String? = null,
-    var overview: String? = null
+    var overview: String? = null,
+    var release_date: String? = null
 ) : Parcelable

@@ -108,6 +108,9 @@ class DetailActivity : AppCompatActivity() {
         Glide.with(this)
             .load(BuildConfig.IMAGES + "/${movies.poster}")
             .into(binding.imagesDetail)
+        Glide.with(this)
+            .load(BuildConfig.IMAGES + "${movies.posterItem}")
+            .into(binding.ivPhotoDetail)
 
         val type = intent.getStringExtra(EXTRA_TYPE)
 
@@ -119,6 +122,7 @@ class DetailActivity : AppCompatActivity() {
 
         binding.titleDetail.text = text
         binding.overview.text = movies.overview
+        binding.tvRelease.text = movies.release_date
     }
 
     private fun share(listEntity: ListEntity) {

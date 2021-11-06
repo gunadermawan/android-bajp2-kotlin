@@ -23,4 +23,7 @@ data class ListResponse(
 
     @field:SerializedName("overview")
     val overview: String? = null,
+
+    @field:SerializedName("release_date")
+    val release_date: String? = null,
 ) : Parcelable

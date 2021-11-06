@@ -34,7 +34,8 @@ class FilmRepository private constructor(private val remoteDataSource: RemoteDat
                             null,
                             response.posterPath,
                             response.backdropPath,
-                            response.overview
+                            response.overview,
+                            response.release_date
                         )
                     }
 
@@ -63,7 +64,8 @@ class FilmRepository private constructor(private val remoteDataSource: RemoteDat
                             response.name,
                             response.posterPath,
                             response.backdropPath,
-                            response.overview
+                            response.overview,
+                            response.release_date
                         )
                     }
 
@@ -84,9 +86,11 @@ class FilmRepository private constructor(private val remoteDataSource: RemoteDat
                 val detailEntity = DetailEntity(
                     movieDetailResponse.id,
                     movieDetailResponse.backdropPath,
+                    movieDetailResponse.posterPath,
                     movieDetailResponse.title,
                     movieDetailResponse.name,
-                    movieDetailResponse.overview
+                    movieDetailResponse.overview,
+                    movieDetailResponse.release_date
                 )
 
                 detailMovieResult.postValue(detailEntity)
@@ -104,9 +108,11 @@ class FilmRepository private constructor(private val remoteDataSource: RemoteDat
                 val detailEntity = DetailEntity(
                     tvShowDetailResponse.id,
                     tvShowDetailResponse.backdropPath,
+                    tvShowDetailResponse.posterPath,
                     tvShowDetailResponse.title,
                     tvShowDetailResponse.name,
-                    tvShowDetailResponse.overview
+                    tvShowDetailResponse.overview,
+                    tvShowDetailResponse.release_date
                 )
 
                 detailTvShowResponse.postValue(detailEntity)
