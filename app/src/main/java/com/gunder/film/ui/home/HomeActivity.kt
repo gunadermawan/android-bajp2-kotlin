@@ -24,7 +24,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.carauselView.pageCount = carauselImg.size
+        binding.carauselView.pageCount = carouselImg.size
         binding.carauselView.setImageListener(imgListener)
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
@@ -34,9 +34,10 @@ class HomeActivity : AppCompatActivity() {
         }.attach()
 
         supportActionBar?.elevation = 0f
-        supportActionBar?.title=""
+        supportActionBar?.title = ""
     }
-    val carauselImg = intArrayOf(
+
+    private val carouselImg = intArrayOf(
         R.drawable.poster_gotham,
         R.drawable.poster_flash,
         R.drawable.poster_bohemian,
@@ -48,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
         R.drawable.poster_doom_patrol,
         R.drawable.poster_cold_persuit
     )
-    val imgListener = ImageListener { position, imageView ->
-        imageView.setImageResource(carauselImg[position])
+    private val imgListener = ImageListener { position, imageView ->
+        imageView.setImageResource(carouselImg[position])
     }
 }
