@@ -1,11 +1,9 @@
 package com.gunder.film.ui.detail
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.gunder.film.BuildConfig
@@ -90,20 +88,6 @@ class DetailActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        setMode(item.itemId)
-        return super.onOptionsItemSelected(item)
-    }
-
-    private fun setMode(selectedMode: Int) {
-        when (selectedMode) {
-            R.id.share -> {
-                val films = intent.getParcelableExtra<ListEntity>(EXTRA_DATA) as ListEntity
-                share(films)
-            }
-        }
-    }
-
     private fun view(movies: DetailEntity) {
         Glide.with(this)
             .load(BuildConfig.IMAGES + "/${movies.poster}")
@@ -123,23 +107,5 @@ class DetailActivity : AppCompatActivity() {
         binding.titleDetail.text = text
         binding.overview.text = movies.overview
         binding.tvRelease.text = movies.release_date
-    }
-
-    private fun share(listEntity: ListEntity) {
-        val type = intent.getStringExtra(EXTRA_TYPE)
-
-        val title = if (type == "movies") {
-            listEntity.title
-        } else {
-            listEntity.name
-        }
-
-        val overview = listEntity.overview
-        val textShare = getString(R.string.text_share, title, overview)
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.putExtra(Intent.EXTRA_TEXT, textShare)
-        intent.type = "text/plain"
-
-        startActivity(Intent.createChooser(intent, "Share using .."))
     }
 }
