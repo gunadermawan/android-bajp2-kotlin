@@ -63,4 +63,26 @@ class DetailActivityViewModelTest {
         viewModel.getMovies().observeForever(observer)
         verify(observer).onChanged(dummyMovies)
     }
+
+    @Test
+    fun loadTvShowDetail() {
+        val tvShow = MutableLiveData<DetailEntity>()
+        tvShow.value = dummyTvShow
+        if (dummyTvShowId != null) {
+            viewModel.setSelectedFilm(dummyTvShowId)
+        }
+        `when`(filmRepository.getDetailTvShow(dummyTvShowId!!)).thenReturn(tvShow)
+        val result = viewModel.getTvShow().value as DetailEntity
+        verify(filmRepository).getDetailTvShow(dummyTvShowId)
+        assertNotNull(result)
+        assertEquals(dummyTvShow.id, result.id)
+        assertEquals(dummyTvShow.title, result.title)
+        assertEquals(dummyTvShow.name, result.name)
+        assertEquals(dummyTvShow.poster, result.poster)
+        assertEquals(dummyTvShow.posterItem, result.posterItem)
+        assertEquals(dummyTvShow.overview, result.overview)
+        assertEquals(dummyTvShow.release_date, result.release_date)
+        viewModel.getTvShow().observeForever(observer)
+        verify(observer).onChanged(dummyTvShow)
+    }
 }
