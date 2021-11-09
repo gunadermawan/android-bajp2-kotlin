@@ -67,10 +67,11 @@ class HomeActivityTest {
         onView(withId(R.id.tv_release)).check(matches(isDisplayed()))
         onView(withId(R.id.tv_release)).check(matches(withText(dummyMovie[0].release_date)))
         onView(withId(R.id.images_detail)).check(matches(isDisplayed()))
+        onView(withId(R.id.iv_photo_detail)).check(matches(isDisplayed()))
     }
 
     @Test
-    fun loadTvShowData(){
+    fun loadTvShowData() {
         onView(withText(R.string.tv_show)).perform(click())
         onView(withId(R.id.rv_tv_show)).check(matches(isDisplayed()))
         onView(withId(R.id.rv_tv_show)).perform(
@@ -81,7 +82,7 @@ class HomeActivityTest {
     }
 
     @Test
-    fun loadDetailTvShow(){
+    fun loadDetailTvShow() {
         onView(withText(R.string.tv_show)).perform(click())
         onView(withId(R.id.rv_tv_show)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click())
@@ -91,6 +92,7 @@ class HomeActivityTest {
         onView(withId(R.id.overview)).check(matches(isDisplayed()))
         onView(withId(R.id.overview)).check(matches(withText(dummyTvShow[0].overview)))
         onView(withId(R.id.images_detail)).check(matches(isDisplayed()))
+        onView(withId(R.id.iv_photo_detail)).check(matches(isDisplayed()))
     }
 
 }
