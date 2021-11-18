@@ -130,10 +130,10 @@ object DataDummy {
                 460465,
                 "/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg",
                 "Mortal Kombat",
-                "Dune",
+                "Shang-Chi and the Legend of the Ten Rings",
                 "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
-                "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
-                "2021-09-15"
+                "Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+                "2021-09-01"
             )
         )
         movies.add(
