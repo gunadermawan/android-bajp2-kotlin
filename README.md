@@ -2,21 +2,21 @@
 # Kriteria Submission
 Berikut kriteria submission yang harus Anda penuhi:
 
-Daftar film
+# Daftar film
 Syarat:
 Mempertahankan fitur sebelumnya.
 Menerapkan ViewModel, LiveData dan Repository.
 
-Detail film
+# Detail film
 Syarat:
 Mempertahankan fitur sebelumnya.
 Menerapkan ViewModel, LiveData dan Repository.
 
-Unit Test
+# Unit Test
 Syarat:
 Menerapkan unit test pada semua fungsi yang digunakan untuk mendapatkan data Movie dan Tv Show dari API atau Lokal.
 
-Instrumentation Test
+# Instrumentation Test
 Syarat:
 
 Menerapkan instrumentation test untuk memastikan fitur-fitur yang ada berjalan dengan semestinya.
